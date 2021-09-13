@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     //card options
     const cardArray = [
     {
@@ -53,35 +52,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
 ]
 
+cardArray.sort(() => 0.5 - Math.random())
+
 const grid = document.querySelector('.grid')
 const resultDisplay = document.querySelector('#result')
-var cardsChosen = []
-var cardsChosenId = []
-var cardsWon = []
+let cardsChosen = []
+let cardsChosenId = []
+let cardsWon = []
 
-//game grid board
+//game grid
 function createBoard() {
     for (let i = 0; i < cardArray.length; i++) {
-        var card = document.createElement('img')
-        card.setAttribute('src', 'images/charles-free.png')
-        card.setAttribute('data-id', i)
-        card.addEventListener('click', flipcard) 
-        grid.appendChild(card)
+      const card = document.createElement('img')
+      card.setAttribute('src', 'images/charles-free.png')
+      card.setAttribute('data-id', i)
+      card.addEventListener('click', flipCard)
+      grid.appendChild(card)
     }
-}
+  }
+
 //check for matches
 function checkForMatch() {
-    var cards = document.querySelectorAll('img')
+    const cards = document.querySelectorAll('img')
     const optionOneId = cardsChosenId[0]
-    const optionTwoId = cardsChosenId[2]
-    if (cardsChosen[0] === cardsChosen[1]) {
+    const optionTwoId = cardsChosenId[1]
+
+    if(optionOneId == optionTwoId) {
+        cards[optionOneId].setAttribute('src', 'images/charles-free.png')
+        cards[optionTwoId].setAttribute('src', 'images/charles-free.png')
+        alert('You selected the same card twice')
+    }
+    else if (cardsChosen[0] === cardsChosen[1]) {
         alert('Match!')
         cards[optionOneId].setAttribute('src', 'images/neo.png')
         cards[optionTwoId].setAttribute('src', 'images/neo.png')
+        cards[optionOneId].removeEventListener('click', flipCard)
+        cards[optionTwoId].removeEventListener('click', flipCard)
         cardsWon.push(cardsChosen)
     } else {
-        cards[optionOneId].setAttribute('src', 'images/neo.png')
-        cards[optionTwoId].setAttribute('src', 'images/neo.png')
+        cards[optionOneId].setAttribute('src', 'images/charles-free.png')
+        cards[optionTwoId].setAttribute('src', 'images/charles-free.png')
         alert('Try again')
     }
     cardsChosen = []
