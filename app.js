@@ -53,18 +53,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
 ]
 
-
 const grid = document.querySelector('.grid')
+var cardsChosen = []
+var cardsChosenId = []
 
-//board
+//game grid board
 function createBoard() {
     for (let i = 0; i < cardArray.length; i++) {
         var card = document.createElement('img')
         card.setAttribute('src', 'images/charles-free.png')
         card.setAttribute('data-id', i)
-       // card.addEventListener('click', flipcard) //write click funtion
+        card.addEventListener('click', flipcard) 
         grid.appendChild(card)
     }
 }
+//check for matches
+
+
+
+
+//flip card
+function flipCard() {
+    var cardId = this.getAttribute('data-id')
+    cardsChosen.push(cardArray[cardId].name)
+    cardsChosenId.push(cardId)
+    this.setAttribute('src', cardArray[cardId].img)
+    if (cardsChosen.length === 2) {
+        setTimeout(checkForMatch, 500)
+    }
+}
+
 createBoard()
 })
