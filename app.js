@@ -3,32 +3,60 @@ document.addEventListener('DOMContentLoaded'), () => {
     //card options
     const cardArray = {
         {
-        name: '',
-        img 'images/.png'
+        name: 'Bella',
+        img 'images/Bella.png'
     }
     {
-        name: '',
-        img 'images/.png'
+        name: 'Bella',
+        img 'images/Bella.png'
     }
     {
-        name: '',
-        img 'images/.png'
+        name: 'BellaPup',
+        img 'images/BellaPup.png'
     }
     {
-        name: '',
-        img 'images/.png'
+        name: 'BellaPup',
+        img 'images/BellaPup.png'
     }
     {
-        name: '',
-        img 'images/.png'
+        name: 'CharlesB',
+        img 'images/CharlesB.png'
     }
     {
-        name: '',
-        img 'images/.png'
+        name: 'CharlesB',
+        img 'images/CharlesB.png'
     }
     {
-        name: '',
-        img 'images/.png'
+        name: 'CharlesPhones',
+        img 'images/CharlesPhones.png'
+    }
+    {
+        name: 'CharlesPhones',
+        img 'images/CharlesPhones.png'
+    }
+    {
+        name: 'BillG',
+        img 'images/BillG.png'
+    }
+    {
+        name: 'BillG',
+        img 'images/BillG.png'
+    }
+    {
+        name: 'Bezos',
+        img 'images/Bezos.png'
+    }
+    {
+        name: 'Bezos',
+        img 'images/Bezos.png'
+    }
+    {
+        name: 'Neo',
+        img 'images/Neo.png'
+    }
+    {
+        name: 'Neo',
+        img 'images/Neo.png'
     }
 }
 
