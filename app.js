@@ -54,8 +54,10 @@ document.addEventListener('DOMContentLoaded', () => {
 ]
 
 const grid = document.querySelector('.grid')
+const resultDisplay = document.querySelector('#result')
 var cardsChosen = []
 var cardsChosenId = []
+var cardsWon = []
 
 //game grid board
 function createBoard() {
@@ -68,20 +70,40 @@ function createBoard() {
     }
 }
 //check for matches
-
+function checkForMatch() {
+    var cards = document.querySelectorAll('img')
+    const optionOneId = cardsChosenId[0]
+    const optionTwoId = cardsChosenId[2]
+    if (cardsChosen[0] === cardsChosen[1]) {
+        alert('Match!')
+        cards[optionOneId].setAttribute('src', 'images/neo.png')
+        cards[optionTwoId].setAttribute('src', 'images/neo.png')
+        cardsWon.push(cardsChosen)
+    } else {
+        cards[optionOneId].setAttribute('src', 'images/neo.png')
+        cards[optionTwoId].setAttribute('src', 'images/neo.png')
+        alert('Try again')
+    }
+    cardsChosen = []
+    cardsChosenId = []
+    resultDisplay.textContent = cardsWon.length
+    if (cardsWon.length === cardsArry.length/2) {
+        resultDisplay.textContent = 'Congratulations! You found them all!'
+    }
+}
 
 
 
 //flip card
 function flipCard() {
-    var cardId = this.getAttribute('data-id')
+    let cardId = this.getAttribute('data-id')
     cardsChosen.push(cardArray[cardId].name)
     cardsChosenId.push(cardId)
     this.setAttribute('src', cardArray[cardId].img)
-    if (cardsChosen.length === 2) {
-        setTimeout(checkForMatch, 500)
+    if (cardsChosen.length ===2) {
+      setTimeout(checkForMatch, 500)
     }
-}
+  }
 
-createBoard()
+  createBoard()
 })
