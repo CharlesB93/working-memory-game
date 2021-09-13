@@ -1,74 +1,70 @@
-document.addEventListener('DOMContentLoaded'), () => {
+document.addEventListener('DOMContentLoaded', () => {
 
     //card options
-    const cardArray = {
-        {
-        name: 'Bella',
-        img 'images/Bella.png'
-    }
+    const cardArray = [
     {
-        name: 'Bella',
-        img 'images/Bella.png'
-    }
+        name: 'bella',
+        img: 'images/bella.png'
+    },
     {
-        name: 'BellaPup',
-        img 'images/BellaPup.png'
-    }
+        name: 'bella-pup',
+        img: 'images/bella-pup.png'
+    },
     {
-        name: 'BellaPup',
-        img 'images/BellaPup.png'
-    }
+        name: 'charles-b',
+        img: 'images/charles-b.png'
+    },
     {
-        name: 'CharlesB',
-        img 'images/CharlesB.png'
-    }
+        name: 'charles-phones',
+        img: 'images/charles-phones.png'
+    },
     {
-        name: 'CharlesB',
-        img 'images/CharlesB.png'
-    }
+        name: 'billg',
+        img: 'images/bill-g.png'
+    },
     {
-        name: 'CharlesPhones',
-        img 'images/CharlesPhones.png'
-    }
+        name: 'bezos',
+        img: 'images/bezos.png'
+    },
     {
-        name: 'CharlesPhones',
-        img 'images/CharlesPhones.png'
-    }
+        name: 'bella',
+        img: 'images/bella.png'
+    },
     {
-        name: 'BillG',
-        img 'images/BillG.png'
-    }
+        name: 'bella-pup',
+        img: 'images/bella-pup.png'
+    },
     {
-        name: 'BillG',
-        img 'images/BillG.png'
-    }
+        name: 'charles-b',
+        img: 'images/charles-b.png'
+    },
     {
-        name: 'Bezos',
-        img 'images/Bezos.png'
-    }
+        name: 'charles-phones',
+        img: 'images/charles-phones.png'
+    },
     {
-        name: 'Bezos',
-        img 'images/Bezos.png'
-    }
+        name: 'billg',
+        img: 'images/bill-g.png'
+    },
     {
-        name: 'Neo',
-        img 'images/Neo.png'
-    }
-    {
-        name: 'Neo',
-        img 'images/Neo.png'
-    }
-}
+        name: 'bezos',
+        img: 'images/bezos.png'
+    },
 
-const grid = document.querySelector.('.grid')
+]
+
+
+const grid = document.querySelector('.grid')
 
 //board
 function createBoard() {
     for (let i = 0; i < cardArray.length; i++) {
-        var vard = document.createElement('img')
-        card.setAttribute('src', 'images/blank.png')
+        var card = document.createElement('img')
+        card.setAttribute('src', 'images/charles-free.png')
         card.setAttribute('data-id', i)
-        card.addEventListener('click', flipcard) //write click funtion
+       // card.addEventListener('click', flipcard) //write click funtion
         grid.appendChild(card)
     }
 }
+createBoard()
+})
